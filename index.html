@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Santiago Grandas Forero</title>
+<meta name="description" content="Experimental psychologist and behavioural scientist in London. Head of Research at QOVES, studying how people and AI models perceive faces.">
+<meta property="og:title" content="Santiago Grandas Forero">
+<meta property="og:description" content="Experimental psychologist and behavioural scientist in London. Head of Research at QOVES, studying how people and AI models perceive faces.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://santiagograndas.com/">
+<meta property="og:image" content="https://santiagograndas.com/img/santi-portrait.jpg">
+<link rel="canonical" href="https://santiagograndas.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300&family=Hanken+Grotesk:wght@400;500&family=Geist+Mono:wght@400&display=swap">
+<style>
+/* Layout: one narrow column, CV-like rows; some rows carry a preview image on the right that drops below on phones. */
+:root {
+  --bg: #f3f1ec;
+  --fg: #26302b;
+  --muted: #56605a;
+  --rule: #d6d2c8;
+  --surface: #ffffff;
+  --focus: #2f6f8f;
+  --serif: 'Spectral', Georgia, 'Times New Roman', serif;
+  --sans: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'Geist Mono', ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #1c1c1e; --fg: #ecebe8; --muted: #a3a39f; --rule: #36363a; --surface: #ffffff; --focus: #7fb6d1; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #1c1c1e; --fg: #ecebe8; --muted: #a3a39f; --rule: #36363a; --surface: #ffffff; --focus: #7fb6d1; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.6; padding-inline: 20px; }
+a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { opacity: 0.7; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+img { display: block; max-width: 100%; }
+
+.page { max-width: 920px; margin: 0 auto; padding-block: 40px 96px; display: flex; flex-direction: column; gap: 72px; }
+
+nav { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; font-size: 15px; }
+nav .name { font-family: var(--serif); font-size: 19px; text-decoration: none; }
+nav .links { display: flex; flex-wrap: wrap; gap: 20px; }
+nav .links a { text-decoration: none; }
+
+.intro { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+.intro img { width: 220px; height: 260px; object-fit: cover; object-position: 50% 25%; border-radius: 4px; flex: 0 0 auto; }
+.intro .text { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+h1 { margin: 0; font-family: var(--serif); font-weight: 300; font-size: clamp(36px, 6vw, 44px); line-height: 1.1; letter-spacing: -0.01em; text-wrap: balance; }
+.intro p { margin: 0; font-size: 17px; line-height: 1.65; max-width: 62ch; text-wrap: pretty; }
+.linkrow { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; align-items: center; }
+
+.email { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.email span { user-select: all; }
+.copy { font: inherit; font-size: 13px; color: var(--fg); background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.copy:hover { border-color: var(--fg); }
+
+h2 { margin: 0 0 16px; font-family: var(--mono); font-weight: 400; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; margin-bottom: 16px; }
+.section-head h2 { margin: 0; }
+.lede { margin: 0 0 20px; font-size: 17px; line-height: 1.6; max-width: 62ch; }
+
+.rows { border-bottom: 1px solid var(--rule); }
+.row { display: flex; flex-wrap: wrap; gap: 16px 32px; padding-block: 24px; border-top: 1px solid var(--rule); }
+.row .when { flex: 0 0 56px; font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 3px; }
+.row .body { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.row .title { font-family: var(--serif); font-size: 20px; line-height: 1.3; text-wrap: balance; }
+.row .desc { font-size: 15px; line-height: 1.55; color: var(--muted); }
+.row .links { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; padding-top: 2px; }
+.preview { flex: 0 1 260px; min-width: 0; }
+.preview img.photo { width: 100%; max-width: 260px; height: 172px; object-fit: cover; border-radius: 3px; }
+
+.duo { display: flex; gap: 12px; align-items: flex-start; }
+.duo .paper { flex: 0 0 104px; border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; background: var(--surface); }
+.duo .paper img { width: 104px; height: 136px; object-fit: cover; object-position: 50% 0%; }
+.duo .press { flex: 1 1 140px; min-width: 0; text-decoration: none; display: flex; flex-direction: column; gap: 6px; }
+.duo .press img { width: 100%; height: 96px; object-fit: cover; object-position: 50% 40%; border-radius: 3px; }
+.tag { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+
+.videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 24px; }
+.video { text-decoration: none; display: flex; flex-direction: column; gap: 10px; }
+.video img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; }
+.video .vt { font-size: 15px; line-height: 1.4; }
+.video .views { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.guides { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); column-gap: 32px; font-size: 15px; border-bottom: 1px solid var(--rule); }
+.guides a { padding-block: 12px; border-top: 1px solid var(--rule); }
+
+.plain .row { padding-block: 14px; font-size: 15px; gap: 4px 32px; }
+.plain .row .when, .press-rows .row .when { flex-basis: 120px; font-family: var(--sans); font-size: 15px; padding-top: 0; }
+.press-rows .row { font-size: 15px; line-height: 1.5; padding-block: 18px; }
+
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 24px; }
+
+@media (max-width: 520px) {
+  .intro img { width: 100%; height: auto; aspect-ratio: 1 / 1; }
+  .row .when { flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<nav aria-label="Main">
+  <a class="name" href="#top">Santiago Grandas Forero</a>
+  <div class="links">
+    <a href="#research">Research</a>
+    <a href="#comms">Science comms</a>
+    <a href="#writing">Writing</a>
+    <a href="#press">Press</a>
+  </div>
+</nav>
+
+<section class="intro" id="top">
+  <img src="img/santi-portrait.jpg" alt="Portrait of Santiago Grandas Forero">
+  <div class="text">
+    <h1>Hi, I'm Santiago.</h1>
+    <p>I'm an experimental psychologist and behavioural scientist based in London. I lead research at QOVES, where I study how people, and the AI models they use, perceive faces. Before that I did an MSc in Psychological Research at Oxford. I've conducted research on applied interventions for social media decision-making and prosocial behaviour.</p>
+    <p>I also explain psychology and neuroscience in Spanish to 20K+ people on TikTok.</p>
+    <div class="linkrow">
+      <a href="https://scholar.google.co.uk/citations?user=SqZmyhcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.tiktok.com/@grandas01" target="_blank" rel="noopener">TikTok</a>
+      <span class="email"><span>santiago.grandasforero@gmail.com</span><button class="copy" type="button" id="copy-email">Copy email</button></span>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <h2>Research</h2>
+  <div class="rows">
+
+    <article class="row">
+      <div class="when">2026</div>
+      <div class="body">
+        <div class="title">Beauty is in the AI of the beholder: MLLMs systematically overrate facial attractiveness</div>
+        <div class="desc">First author. Pre-registered comparison of 2,513 human raters with ChatGPT, Claude, Gemini and Grok. Under review, Computers in Human Behavior.</div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2609.02512" target="_blank" rel="noopener">arXiv</a>
+          <a href="https://www.qoves.com/research/do-ai-models-rate-faces-like-humans" target="_blank" rel="noopener">Plain-language summary</a>
+          <a href="https://www.psypost.org/chatgpt-claude-grok-and-gemini-overrate-facial-attractiveness-compared-to-human-judges/" target="_blank" rel="noopener">PsyPost</a>
+        </div>
+      </div>
+      <div class="preview duo">
+        <a class="paper" href="https://arxiv.org/abs/2609.02512" target="_blank" rel="noopener"><img src="img/paper-thumb.jpg" alt="First page of the paper on arXiv"></a>
+        <a class="press" href="https://www.psypost.org/chatgpt-claude-grok-and-gemini-overrate-facial-attractiveness-compared-to-human-judges/" target="_blank" rel="noopener">
+          <img src="img/psypost-thumb.jpg" alt="PsyPost article header image">
+          <span class="tag">PsyPost · Sep 2026</span>
+        </a>
+      </div>
+    </article>
+
+    <article class="row">
+      <div class="when">Now</div>
+      <div class="body">
+        <div class="title">Transforming social media use through in-time suggestions of healthy alternatives</div>
+        <div class="desc">Ongoing field experiment with the one sec app. Lead Study Design, Junior Researcher Programme, supervised by David Grüning. Poster at CoBene, February 2026.</div>
+        <div class="links"><a href="https://jrp.pscholars.org/david-gruning-team/" target="_blank" rel="noopener">Project page</a></div>
+      </div>
+      <div class="preview"><img class="photo" src="img/poster-talk.jpg" alt="Santiago presenting the poster at CoBene 2026" style="object-position: 60% 40%"></div>
+    </article>
+
+    <article class="row">
+      <div class="when">2026</div>
+      <div class="body">
+        <div class="title">Do freckles make you look more or less attractive?</div>
+        <div class="desc">Co-author. Online experiment: 953 participants, 40 faces with and without freckles.</div>
+        <div class="links"><a href="https://www.qoves.com/research/freckles-whitepaper" target="_blank" rel="noopener">Report</a></div>
+      </div>
+    </article>
+
+    <article class="row">
+      <div class="when">2026</div>
+      <div class="body">
+        <div class="title">Empathy and Action for Refugees: Experimental Evidence on Outgroup Prosociality</div>
+        <div class="desc">Under review, Peace and Conflict: Journal of Peace Psychology.</div>
+        <div class="links"><a href="https://osf.io/3jty4/overview" target="_blank" rel="noopener">Preregistration (OSF)</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="comms">
+  <div class="section-head">
+    <h2>Science communication</h2>
+    <a href="https://www.tiktok.com/@grandas01" target="_blank" rel="noopener" style="font-size: 14px">@grandas01 · 20K+ followers</a>
+  </div>
+  <p class="lede">Short videos in Spanish on psychology and neuroscience research.</p>
+  <div class="videos">
+    <a class="video" href="https://www.tiktok.com/@grandas01" target="_blank" rel="noopener">
+      <img src="img/tt-oxford.jpg" alt="TikTok video: the myth of learning styles" style="object-position: 50% 30%">
+      <span class="vt">The myth of learning styles</span>
+      <span class="views">1.3M views</span>
+    </a>
+    <a class="video" href="https://www.tiktok.com/@grandas01" target="_blank" rel="noopener">
+      <img src="img/tt-habits.jpg" alt="TikTok video: the neuroscience and psychology of doomscrolling" style="object-position: 50% 40%">
+      <span class="vt">The neuroscience and psychology of doomscrolling</span>
+      <span class="views">306.9K views</span>
+    </a>
+    <a class="video" href="https://www.tiktok.com/@grandas01" target="_blank" rel="noopener">
+      <img src="img/tt-sleep.jpg" alt="TikTok video: evidence-based study techniques" style="object-position: 50% 55%">
+      <span class="vt">Evidence-based study techniques</span>
+      <span class="views">108.7K views</span>
+    </a>
+  </div>
+</section>
+
+<section id="writing">
+  <h2>Writing</h2>
+  <p class="lede">Six evidence-based guides to the science of facial attractiveness, published under my byline at QOVES.</p>
+  <div class="guides">
+    <a href="https://www.qoves.com/insights/facial-adiposity" target="_blank" rel="noopener">Facial adiposity</a>
+    <a href="https://www.qoves.com/insights/facial-averageness" target="_blank" rel="noopener">Facial averageness</a>
+    <a href="https://www.qoves.com/insights/facial-dimorphism" target="_blank" rel="noopener">Facial dimorphism</a>
+    <a href="https://www.qoves.com/insights/facial-neoteny" target="_blank" rel="noopener">Facial neoteny</a>
+    <a href="https://www.qoves.com/insights/facial-proportionality" target="_blank" rel="noopener">Facial proportionality</a>
+    <a href="https://www.qoves.com/insights/facial-symmetry" target="_blank" rel="noopener">Facial symmetry</a>
+  </div>
+</section>
+
+<section id="press">
+  <h2>Press &amp; recognition</h2>
+  <div class="rows press-rows">
+    <div class="row">
+      <div class="when">PsyPost, 2026</div>
+      <div class="body"><a href="https://www.psypost.org/chatgpt-claude-grok-and-gemini-overrate-facial-attractiveness-compared-to-human-judges/" target="_blank" rel="noopener">ChatGPT, Claude, Grok, and Gemini overrate facial attractiveness compared to human judges</a></div>
+    </div>
+    <div class="row">
+      <div class="when">Oxford, 2025</div>
+      <div class="body">
+        <a href="https://www.stx.ox.ac.uk/article/st-cross-students-win-in-oxfords-all-innovate-2025-competition" target="_blank" rel="noopener">Winner, EnSpire All-Innovate</a>
+        <div class="desc">For Psychometrica, a digital platform for mental health professionals in Colombia.</div>
+      </div>
+      <div class="preview"><img class="photo" src="img/psychometrica-pitch-c.jpg" alt="Santiago pitching Psychometrica in an Oxford lecture theatre" style="object-position: 50% 45%"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Experience &amp; education</h2>
+  <div class="rows plain">
+    <div class="row"><div class="when">2025 – now</div><div class="body">Head of Research, QOVES Studio, London</div></div>
+    <div class="row"><div class="when">2024 – 25</div><div class="body">MSc Psychological Research, University of Oxford · Colfuturo scholar</div></div>
+    <div class="row"><div class="when">2021 – 24</div><div class="body">BSc in Psychology (Summa Cum Laude), University of Charleston · NCAA Soccer</div></div>
+  </div>
+</section>
+
+<footer>
+  <span>Santiago Grandas Forero · London</span>
+  <span>santiago.grandasforero@gmail.com</span>
+</footer>
+
+</div>
+
+<script>
+document.getElementById('copy-email').addEventListener('click', function (e) {
+  var btn = e.currentTarget, addr = 'santiago.grandasforero@gmail.com';
+  function done(t) { btn.textContent = t; setTimeout(function () { btn.textContent = 'Copy email'; }, 1800); }
+  try {
+    navigator.clipboard.writeText(addr).then(function () { done('Copied'); }, function () { selectIt(); });
+  } catch (err) { selectIt(); }
+  function selectIt() {
+    var span = btn.previousElementSibling, r = document.createRange();
+    r.selectNodeContents(span); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    done('Selected, press Ctrl/Cmd+C');
+  }
+});
+</script>
+
+</body></html>
